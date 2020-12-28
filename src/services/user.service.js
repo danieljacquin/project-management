@@ -12,6 +12,14 @@ class UserService {
             return error;
         }
     }
+    async create(user){
+        try{
+            const responses = await axios.post(`${apiUrl}users`,user);
+            return responses;
+        }catch(error){
+            return error;
+        }
+    }
 }
 
 export default new UserService();
